@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thumb gallery</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  body{
+  	margin:20px;
+  	padding:0;
+  	background-color: #333;
+  }
+  .container{
+  	width:760px;
+  	max-height: auto;
+  	border:#fff solid 3px;
+  	background:#fff;
+  	margin-left: 18%;
+  }
+  .main-img img,.imgs img{
+  	width: 100%;
+
+  }
+  .imgs{
+  	display: grid;
+  	grid-template-columns: 1fr 1fr 1fr 1fr;
+  	grid-gap: 5px;
+  }
+  @keyframes fadeIn{
+  	to{
+      opacity: 1;
+  	}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="main-img">
+		<img src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" id="current">
+	</div>
+	<div class="imgs">
+		<img src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+		<img src="https://images.pexels.com/photos/158826/structure-light-led-movement-158826.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+		<img src="https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+		<img src="https://images.pexels.com/photos/1426708/pexels-photo-1426708.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+		<img src="https://images.pexels.com/photos/1036936/pexels-photo-1036936.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+		<img src="https://images.pexels.com/photos/775907/pexels-photo-775907.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+		<img src="https://images.pexels.com/photos/239898/pexels-photo-239898.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+		<img src="https://images.pexels.com/photos/1150988/pexels-photo-1150988.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+	</div>
+</div>
+<script>
+	const current=document.querySelector('#current');
+	const imgs=document.querySelectorAll('.imgs img');
+	const opacity=0.4;
+
+	imgs.forEach(img=>img.addEventListener('click',imgClick
+		));
+	function imgClick(e){
+		imgs.forEach(img=>(img.style.opacity=1));
+		current.src=e.target.src;
+		e.target.style.opacity=opacity;
+	}
+</script>
+
+</body>
+</html>
